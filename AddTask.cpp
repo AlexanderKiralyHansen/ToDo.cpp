@@ -7,7 +7,7 @@ Task::Task(std::string desc)
 }
 
 //Constructor, loads existing tasks from file
-TodoList::TodoList() //Constructor initializes todolist and loads tasks from file
+TodoList::TodoList()
 {
     loadTasks();
 }
