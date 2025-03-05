@@ -1,4 +1,5 @@
 #include "AddTask.hpp"
+#include "Task.hpp"
 
 int main()
 {
@@ -9,7 +10,7 @@ int main()
 		std::cout << "\n1. Add Task\n2. Show Tasks\n3. Exit\n Choose an option: ";
 		int choice;
 		std::cin >> choice;
-		std::cin.ignore(); // Cleear input buffer
+		std::cin.ignore(); // Clear input buffer
 
 		if (choice == 1)
 		{
