@@ -1,10 +1,5 @@
 #include "AddTask.hpp"
 
-// Constructor, initialize task with description
-Task::Task(std::string desc)
-{
-    description = desc;
-}
 
 //Constructor, loads existing tasks from file
 TodoList::TodoList() //Constructor initializes todolist and loads tasks from file
@@ -31,7 +26,7 @@ void TodoList::showTasks() const
         std::cout << "Your Todo List:\n";
         for (size_t i=0; i < todolist.size(); i++)
         {
-            std::cout << i + 1 << ". " << todolist[i].description << "\n";
+            std::cout << i + 1 << ". " << todolist[i].Task::getDescription() << "\n";
         }
     }
 }
@@ -42,7 +37,7 @@ void TodoList::saveTasks() const
     std::ofstream file(filename); //Open file for writing
     for (const Task& task : todolist)
     {
-        file << task.description << "\n"; //Write task to new line
+        file << task.Task::getDescription() << "\n"; //Write task to new line
     }
 }
 
@@ -56,3 +51,5 @@ void TodoList::loadTasks()
         todolist.push_back(Task(taskDesc)); //Add task to list
     }
 }
+
+// Delete task from the list

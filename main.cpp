@@ -1,34 +1,5 @@
-
-/*
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-class Task
-{
-	public:
-	std::string _description;
-	Task(std::string description){
-		_description = description;
-	}
-};
-
-class TodoList
-{
-	
-	public:
-	std::vector<Task> todolist;
-	TodoList(){}
-};
-
-int main() {
-
-    TodoList todo = TodoList();
-
-    return 0;
-}*/
-
 #include "AddTask.hpp"
+#include "Task.hpp"
 
 int main()
 {
@@ -39,7 +10,7 @@ int main()
 		std::cout << "\n1. Add Task\n2. Show Tasks\n3. Exit\n Choose an option: ";
 		int choice;
 		std::cin >> choice;
-		std::cin.ignore(); // Cleear input buffer
+		std::cin.ignore(); // Clear input buffer
 
 		if (choice == 1)
 		{
