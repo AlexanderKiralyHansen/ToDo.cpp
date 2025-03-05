@@ -7,10 +7,10 @@ Task::Task(std::string desc)
     isTaskDone = false;
 }
 
-std::string Task::getDescription() const {
+std::string Task::getDescription() const {  // Getter for name of task
     return(description);
 }
 
-bool Task::getTaskStatus() const {
+bool Task::getTaskStatus() const {  // Getter for task status
     return(isTaskDone);
 }

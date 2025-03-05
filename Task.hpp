@@ -8,8 +8,8 @@ class Task
 {
     public:
         Task(std::string desc);     //Constructor initialize task
-        std::string getDescription() const;
-        bool getTaskStatus() const;
+        std::string getDescription() const; // Getter for task name
+        bool getTaskStatus() const;         // Getter for task status
 
     private:
         std::string description;    //Stores task description
