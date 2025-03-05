@@ -32,7 +32,7 @@ int main() {
 
 int main()
 {
-	TodoList todo;
+	TodoList todo; //Create todolist object
 
 	while (true)
 	{
@@ -45,23 +45,24 @@ int main()
 		{
 			std::cout << "Enter task description: ";
 			std::string taskDesc;
-			getline(std::cin, taskDesc);
-			todo.addTask(taskDesc);
+			getline(std::cin, taskDesc); //Get task description
+			todo.addTask(taskDesc); //Add task to todolist
 		}
 
 		else if (choice == 2)
 		{
-			todo.showTasks();
+			todo.showTasks(); //Display all tasks
 		}
 
 		else if (choice == 3)
 		{
 			std::cout << "Exiting program...\n";
+			break; //Exit program
 		}
 		
 		else
 		{
-			std::cout << "Invalid choice. Please try again.\n";
+			std::cout << "Invalid choice. Please try again.\n"; //Invalid choice
 		}
 	}
 
