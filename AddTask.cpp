@@ -72,4 +72,10 @@ void TodoList::completeTask(int taskID, bool status) {  // Method to change comp
     saveTasks();       
 }
 
-// Delete task from the list
+void TodoList::renameTask(int taskID) {
+    std::string newDescription;
+    std::cout << "What would you like to rename task: "<< taskID << std::endl;
+    getline(std::cin, newDescription);
+    todolist[taskID-1].setDescription(newDescription);
+    saveTasks();
+}

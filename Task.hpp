@@ -12,6 +12,7 @@ class Task
         std::string getDescription() const; // Getter for task name
         bool getTaskStatus() const;         // Getter for task status
         void setTaskStatus(bool status);    // Setter for task status
+        void setDescription(std::string newDescription);
 
     private:
         std::string description;    //Stores task description

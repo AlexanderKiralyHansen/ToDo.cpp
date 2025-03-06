@@ -23,3 +23,7 @@ bool Task::getTaskStatus() const {  // Getter for task status
 void Task::setTaskStatus(bool status) { // Setter for the status of a task
     isTaskDone = status;
 } 
+
+void Task::setDescription(std::string newDescription) { // Setter for description of task
+    description = newDescription;
+}

@@ -8,7 +8,7 @@ int main()
 
 	while (true)
 	{
-		std::cout << "\n 1. Add task \n 2. Show tasks \n 3. Complete a task \n 4. Uncomplete a task\n 5. Exit \n Choose an option: " << std::endl;
+		std::cout << "\n 1. Add task \n 2. Show tasks \n 3. Complete a task \n 4. Uncomplete a task\n 5. Edit a task description \n 6. Exit \n Choose an option: ";
 		getline(std::cin, userInput);	// User input
 		int choice = stoi(userInput);	// Convert to integer
 
@@ -37,6 +37,13 @@ int main()
 		}
 
 		else if (choice == 5) {
+			std::cout << "\n What task would you like to rename? ";
+			todo.showTasks();
+			getline(std::cin, userInput);
+			todo.renameTask(stoi(userInput));
+		}
+		
+		else if (choice == 6) {
 			std::cout << " Exiting program...\n";
 			break; //Exit program
 		}

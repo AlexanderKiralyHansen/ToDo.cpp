@@ -25,6 +25,7 @@ class TodoList
         void saveTasks() const;                     // Saves all tasks to a file
         void loadTasks();                           // Loads tasks from a file
         void completeTask(int taskID, bool status); // Mark a task as complete or incomplete
+        void renameTask(int taskID);                // Rename a given task
         //void deleteTask(int taskIndex); // Method for deleting tasks
 
 };
