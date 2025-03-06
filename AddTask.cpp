@@ -26,7 +26,12 @@ void TodoList::showTasks() const
         std::cout << "Your Todo List:\n";
         for (size_t i=0; i < todolist.size(); i++)
         {
-            std::cout << i + 1 << ". " << todolist[i].Task::getDescription() << "\n";
+            std::cout << i + 1 << ". \"" << todolist[i].getDescription() << "\" and current status is: ";
+            if (todolist[i].getTaskStatus() == true) {
+                std::cout << "\"Complete\"" << std::endl;
+            } else {
+                std::cout << "\"Incomplete\"" << std::endl;
+            }
         }
     }
 }
