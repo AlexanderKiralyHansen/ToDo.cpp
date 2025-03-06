@@ -3,17 +3,14 @@
 
 int main()
 {
-	TodoList todo; //Create todolist object
-	std::string userInput;
+	TodoList todo; 			// Create todolist object
+	std::string userInput;	// Var for general user input
 
 	while (true)
 	{
 		std::cout << "\n 1. Add task \n 2. Show tasks \n 3. Complete a task \n 4. Uncomplete a task\n 5. Exit \n Choose an option: " << std::endl;
-		getline(std::cin, userInput);
-		int choice;
-		choice = stoi(userInput);
-		/*std::cin >> choice;
-		std::cin.ignore(); // Clear input buffer*/
+		getline(std::cin, userInput);	// User input
+		int choice = stoi(userInput);	// Convert to integer
 
 		if (choice == 1) {
 			std::cout << " Enter task description: ";
@@ -28,16 +25,15 @@ int main()
 		else if (choice == 3) {
 			todo.showTasks(); // Print all tasks with id number to make it easier for the user to select the right one
 			std::cout << "\n What task would you like to mark as completed? Input the id number" << std::endl;
-			getline(std::cin, userInput);
-			todo.completeTask(stoi(userInput)-1, true);
+			getline(std::cin, userInput);					// Get user input
+			todo.completeTask(stoi(userInput)-1, true);		// Mark the given task complete. Subtract one from the input because the task are stored in a vector
 		}
 
 		else if (choice == 4) {	// Yes this could have been a function
-			todo.showTasks(); // Print all tasks with id number to make it easier for the user to select the right one
+			todo.showTasks(); 	// Print all tasks with id number to make it easier for the user to select the right one
 			std::cout << "\n What task would you like to mark as incompleted? Input the id number" << std::endl;
-			getline(std::cin, userInput);
-			// int taskID = stoi(userInput)-1;
-			todo.completeTask(stoi(userInput)-1, false);
+			getline(std::cin, userInput);					// Get user input
+			todo.completeTask(stoi(userInput)-1, false);	// Mark the given task incomplete. Subtract one from the input because the task are stored in a vector
 		}
 
 		else if (choice == 5) {

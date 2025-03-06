@@ -20,6 +20,6 @@ bool Task::getTaskStatus() const {  // Getter for task status
     return(isTaskDone);
 }
 
-void Task::setTaskStatus(bool status) {
+void Task::setTaskStatus(bool status) { // Setter for the status of a task
     isTaskDone = status;
-}
+} 

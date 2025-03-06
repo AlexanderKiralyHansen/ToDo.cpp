@@ -19,11 +19,11 @@ class TodoList
 
     public:
         TodoList(); //Constructor: Loads tasks from file
-        void addTask(const std::string& taskDesc); //Adds a task to the todolist
-        void showTasks() const;         //Displays all tasks in the todolist
-        void saveTasks() const;         //Saves all tasks to a file
-        void loadTasks();               //Loads tasks from a file
-        void completeTask(int taskID, bool status);
+        void addTask(const std::string& taskDesc);  // Adds a task to the todolist
+        void showTasks() const;                     // Displays all tasks in the todolist
+        void saveTasks() const;                     // Saves all tasks to a file
+        void loadTasks();                           // Loads tasks from a file
+        void completeTask(int taskID, bool status); // Mark a task as complete or incomplete
         //void deleteTask(int taskIndex); // Method for deleting tasks
 
 };

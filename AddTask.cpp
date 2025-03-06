@@ -18,16 +18,16 @@ void TodoList::addTask(const std::string& taskDesc)
 //Display current todo list
 void TodoList::showTasks() const
 {
-    if (todolist.empty())
+    if (todolist.empty())   // Incase there are no tasks, no need to print them
         std::cout << " No tasks available.\n";
 
     else
     {
         std::cout << " Your Todo List:\n";
-        for (size_t i=0; i < todolist.size(); i++)
+        for (size_t i=0; i < todolist.size(); i++)  // For loop to go through the entire todolist vector and print each object
         {
-            std::cout << " " << i + 1 << ". \"" << todolist[i].getDescription() << "\" and current status is: ";
-            if (todolist[i].getTaskStatus() == true) {
+            std::cout << " " << i + 1 << ". \"" << todolist[i].getDescription() << "\" and current status is: ";    // Print the description of the task
+            if (todolist[i].getTaskStatus() == true) {  // If statement to print a word and not 1 or 0 as the status 
                 std::cout << "\"Complete\"" << std::endl;
             } else {
                 std::cout << "\"Incomplete\"" << std::endl;
@@ -57,8 +57,8 @@ void TodoList::loadTasks()
     }
 }
 
-void TodoList::completeTask(int taskID, bool status) {
-    todolist[taskID].Task::setTaskStatus(status);
+void TodoList::completeTask(int taskID, bool status) {  // Method to change completion status of a given task
+    todolist[taskID].Task::setTaskStatus(status);       
 }
 
 // Delete task from the list

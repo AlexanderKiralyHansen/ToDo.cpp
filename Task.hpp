@@ -11,7 +11,7 @@ class Task
         Task(std::string desc, bool status);// Constructor for loading tasks from file
         std::string getDescription() const; // Getter for task name
         bool getTaskStatus() const;         // Getter for task status
-        void setTaskStatus(bool status);
+        void setTaskStatus(bool status);    // Setter for task status
 
     private:
         std::string description;    //Stores task description
