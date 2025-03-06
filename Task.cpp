@@ -13,11 +13,11 @@ Task::Task(std::string desc, bool status) {
 }
 
 std::string Task::getDescription() const {  // Getter for name of task
-    return(description);
+    return description;
 }
 
 bool Task::getTaskStatus() const {  // Getter for task status
-    return(isTaskDone);
+    return isTaskDone;
 }
 
 void Task::setTaskStatus(bool status) { // Setter for the status of a task

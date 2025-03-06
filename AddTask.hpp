@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include "Task.hpp"
@@ -13,7 +14,7 @@ class TodoList
 {
     private:
         std::vector<Task> todolist; //Stores all tasks
-        const std::string filename = "Tasks.txt"; //File stores tasks
+        const std::string filename = "Tasks.csv"; //File stores tasks
         
 
 

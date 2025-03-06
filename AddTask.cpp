@@ -42,23 +42,34 @@ void TodoList::saveTasks() const
     std::ofstream file(filename); //Open file for writing
     for (const Task& task : todolist)
     {
-        file << task.Task::getDescription() << "\n"; //Write task to new line
+        file << task.Task::getDescription() << "," << task.Task::getTaskStatus() << "\n"; //Write task to new line
     }
+    file.close();
 }
 
 //Load tasks from file into memory
 void TodoList::loadTasks()
 {
     std::ifstream file(filename); //Open file for reading
-    std::string taskDesc;
-    while (getline(file,taskDesc)) //Read all task lines
-    {
-        todolist.push_back(Task(taskDesc)); //Add task to list
+    std::string currentLine;
+
+    while (getline(file, currentLine)) {        // While file still has a line with a task, read the next
+        std::vector <std::string> fileData;     // Vector to store data when split
+
+        std::stringstream toSplit(currentLine); // Creates a stream with the input of the read line, this allows the getline to be used on it
+        while (toSplit.good()){                 // As long as we get new data, repeat
+            std::string tmpStorage;             // Tmp variable, this is the output of the getline
+            getline(toSplit, tmpStorage,',');   // Check the line until a "," is met, then stop there
+            fileData.push_back(tmpStorage);     // Pushback the line before the ","
+        }
+        todolist.push_back(Task(fileData[0], stoi(fileData[1]))); //Add task to list
+        fileData.clear();   // Clear the vector so we dont have garbage
     }
 }
 
 void TodoList::completeTask(int taskID, bool status) {  // Method to change completion status of a given task
-    todolist[taskID].Task::setTaskStatus(status);       
+    todolist[taskID].Task::setTaskStatus(status);
+    saveTasks();       
 }
 
 // Delete task from the list
