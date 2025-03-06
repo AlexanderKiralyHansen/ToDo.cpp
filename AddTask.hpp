@@ -23,6 +23,7 @@ class TodoList
         void showTasks() const;         //Displays all tasks in the todolist
         void saveTasks() const;         //Saves all tasks to a file
         void loadTasks();               //Loads tasks from a file
+        void completeTask(int taskID, bool status);
         //void deleteTask(int taskIndex); // Method for deleting tasks
 
 };
